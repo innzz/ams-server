@@ -1,9 +1,9 @@
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
-import routes from "./routes";
-import connectDB from "./db";
+import routes from "../../routes";
 import serverless from "serverless-http";
+import connectDB from "../../db";
 
 // import v2Routes from "./routes/v2/index.js";
 dotenv.config();
