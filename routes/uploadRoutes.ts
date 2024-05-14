@@ -31,6 +31,7 @@ router.post("/", upload.single("image"), (req, res) => {
       
         // Construct the file location URL
         const fileLocation = path.join(__dirname, "..", req.file.path); // Assuming 'uploads' directory is in the parent directory
+        console.log({fileLocation});
       
         // Send back the file location as response
         return res.status(200).send({
