@@ -8,28 +8,22 @@ import connectDB from "./db";
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT
-
+const port = process.env.PORT;
 
 app.use(express.json({ limit: "50mb" })); //body parsing
 app.use(express.urlencoded({ extended: true }));
 
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+app.use(cors());
 
-app.use("/api", routes)
+app.use("/api", routes);
 connectDB();
 
-app.get("/", async (req,res)=>{
-    res.send("Wow")
+app.get("/", async (req, res) => {
+  res.send("Wow");
 });
 
-app.listen(port, async() => {
+app.listen(port, async () => {
   console.log("Server is Working!");
 });
-
 
 export default app;
