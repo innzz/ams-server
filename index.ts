@@ -13,6 +13,7 @@ const port = process.env.PORT;
 app.use(express.json({ limit: "50mb" })); //body parsing
 app.use(express.urlencoded({ extended: true }));
 
+connectDB();
 app.use(
     cors({
       origin: "*",
@@ -20,7 +21,6 @@ app.use(
   );
 
 app.use("/api", routes);
-connectDB();
 
 app.get("/", async (req, res) => {
   res.send(`Wow ${process.env.MONGO_URI}`);
