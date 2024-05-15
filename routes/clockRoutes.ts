@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
     try {
-      const data = await Clock.find({});
+      const data = await Clock.find({}).sort({$natural:-1});
       res.status(200).send({
         success: true,
         status_code: 200,

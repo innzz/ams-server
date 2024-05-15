@@ -23,7 +23,7 @@ app.use(
 app.use("/api", routes);
 
 app.get("/", async (req, res) => {
-  res.send(`Wow ${process.env.MONGO_URI}`);
+  res.send(`This is home page`);
 });
 
 app.listen(port, async () => {
