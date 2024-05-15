@@ -3,7 +3,6 @@ import dotenv from "dotenv";
 import express from "express";
 import routes from "./routes";
 import connectDB from "./db";
-import serverless from "serverless-http";
 
 // import v2Routes from "./routes/v2/index.js";
 dotenv.config();
@@ -31,4 +30,4 @@ app.listen(port, async () => {
   console.log("Server is Working!");
 });
 
-export default serverless(app);
+export default app;
